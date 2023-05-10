@@ -1,0 +1,30 @@
+F:\anaconda3\python.exe F:\DataSpell_workspace\CrossBoundaryIdentification_Project\越界识别代码\person_detect_video.py 
+person_detect_video: weights=models\yolov5s.pt, data=data\coco128.yaml, imgsz=[416, 416], conf_thres=0.5, iou_thres=0.45, max_det=1000, device=, classes=None, agnostic_nms=False, augment=False, visualize=False, hide_labels=False, hide_conf=False, half=False, dnn=False, track_thresh=0.5, track_buffer=30, match_thresh=0.8, aspect_ratio_thresh=1.6, min_box_area=10, mot20=False
+YOLOv5  2023-5-8 torch 1.12.1 CPU
+
+Fusing layers... 
+Model Summary: 213 layers, 7225885 parameters, 0 gradients
+Traceback (most recent call last):
+  File "F:\DataSpell_workspace\CrossBoundaryIdentification_Project\越界识别代码\person_detect_video.py", line 138, in <module>
+    main(opt)
+  File "F:\DataSpell_workspace\CrossBoundaryIdentification_Project\越界识别代码\person_detect_video.py", line 73, in main
+    pred = model(im, augment=opt.augment, visualize=opt.visualize)
+  File "F:\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "F:\DataSpell_workspace\CrossBoundaryIdentification_Project\越界识别代码\models\common.py", line 397, in forward
+    y = self.model(im) if self.jit else self.model(im, augment=augment, visualize=visualize)
+  File "F:\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "F:\DataSpell_workspace\CrossBoundaryIdentification_Project\越界识别代码\models\yolo.py", line 126, in forward
+    return self._forward_once(x, profile, visualize)  # single-scale inference, train
+  File "F:\DataSpell_workspace\CrossBoundaryIdentification_Project\越界识别代码\models\yolo.py", line 149, in _forward_once
+    x = m(x)  # run
+  File "F:\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "F:\anaconda3\lib\site-packages\torch\nn\modules\upsampling.py", line 154, in forward
+    recompute_scale_factor=self.recompute_scale_factor)
+  File "F:\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1207, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'Upsample' object has no attribute 'recompute_scale_factor'
+
+Process finished with exit code 1
